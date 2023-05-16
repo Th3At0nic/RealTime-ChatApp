@@ -1,24 +1,3 @@
-// import React from "react";
-// import "./Input.css";
-
-// const Input = ({ message, setMessage, sendMessage }) => (
-//   <form className="form">
-//     <input
-//       className="input"
-//       type="text"
-//       placeholder="Type a message..."
-//       value={message}
-//       onChange={(event) => setMessage(event.target.value)}
-//       onKeyUp={(event) => (event.key === "Enter" ? sendMessage(event) : null)}
-//     />
-//     <button className="sendButton" onClick={(event) => sendMessage(event)}>
-//       Send
-//     </button>
-//   </form>
-// );
-
-// export default Input;
-
 import React from "react";
 
 import "./Input.css";
@@ -31,9 +10,7 @@ const Input = ({ setMessage, sendMessage, message }) => (
       placeholder="Type a message..."
       value={message}
       onChange={({ target: { value } }) => setMessage(value)}
-      onKeyPress={(event) =>
-        event.key === "Enter" ? sendMessage(event) : null
-      }
+      onKeyUp={(event) => (event.key === "Enter" ? sendMessage(event) : null)}
     />
     <button className="sendButton" onClick={(e) => sendMessage(e)}>
       Send
